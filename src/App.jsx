@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Todos from './components/Todos';
 
 function App() {
   const [todos, setTodos] = useState([
@@ -25,13 +26,23 @@ function App() {
 
   return (
     
-      <div> 
-      <h1>My todo List</h1>
+      <div style={styles.container}> 
+      <h1 style={styles.little}> My todo List</h1>
       {todos.map((todo) => {
         return <p key={todo.id}>{todo.title}</p>
       })}
       </div>
   )
+}
+
+const styles = {
+  container: {
+    textAlign: 'center',
+    padding: '12px',
+  },
+  title: {
+    fontSize: '36px',
+  },
 }
 
 export default App
